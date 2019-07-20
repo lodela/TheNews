@@ -1,0 +1,91 @@
+[class^="mainContent_"] [class^="nav_"]{
+  border:solid 1px red;
+  display: inline-block;
+  overflow:hidden;
+  position: initial;
+  float: left;
+  margin:0;
+  padding: 0;
+}
+
+.axen_siteMenu {
+  z-index: 2 !important;
+  -moz-transition: all 0.33s;
+  -webkit-transition: all 0.33s;
+  transition: all 0.33s;
+}
+.axen_siteMenu:hover {
+  z-index: 4 !important;
+  -moz-transition: all 0.33s;
+  -webkit-transition: all 0.33s;
+  transition: all 0.33s;
+}
+.axen_siteMenu a {
+  border-bottom: 2px solid transparent;
+}
+.axen_siteMenu a:hover {
+  border-bottom: 2px solid #4472c5;
+}
+
+.dropdown-content {
+  width: 170px;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.dropdown-content li {
+  border: solid 1px green;
+  border-width: 0 0 1px 0;
+  width: 100% !important;
+}
+.dropdown-content li a {
+  border-bottom: 2px solid transparent;
+}
+.dropdown-content li a:hover {
+  border-bottom: 2px solid #4472c5;
+}
+
+
+
+[class^="canvasWrapper_"]{
+  z-index: 3 !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: slategray;
+}
+
+::-webkit-scrollbar-track {
+  background: green;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  scrollbar-face-color: slategray;
+  scrollbar-track-color: #b8c0c8;
+}
+
+
+
+.ms-compositeHeader{
+  padding: 0px 32px 0px 24px !important;
+  border:solid 1px red;
+}
+
+.ms-List-surface{
+  border:solid 1px red !important;
+}
+
+[class^="peopleCard_"] [class^="card_"]{
+  border: solid 1px red !important;
+  width: 95% !important;
+}
+

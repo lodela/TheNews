@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>TheNews</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = yes" />
+<link rel="shortcut icon" href="images/favico.jpg" />
+<link href="css/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+<!--<link href="css/print.css" media="print" rel="stylesheet" type="text/css" />-->
+<!--[if lt IE 9]>
+<link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<!-- for production activate JQuery below -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- FANCY BOX -->
+<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- helpers - button, thumbnail and media (optional) -->
+<link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- /FANCY BOX -->
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script type="text/javascript">
+	var change= false;
+	$(window).scroll(function(){
+	window_y = $(window).scrollTop();
+	scroll_critical = parseInt($("#moreNewsBtm").height());
+	scroll_critical = '1200';
+	if (window_y > scroll_critical){
+		$('.player').fadeIn();
+		$('.video').html();
+	}else{
+		$('.player').fadeOut();
+	}
+});
+</script>
+</head>
+<body>
+
+
+<header>
+	<h1 id="logo"></h1>
+	<section id="social">
+		<div class="CapitalMedia"><img src="images/onePxImage.png"></div>
+		<div class="socials">
+			<ul>
+				<li><a href="#" class="video social-video white" alt="videos" title="videos"></a></li>
+				<li><a href="#" class="face social-facebook white" alt="face" title="Facebook"></a></li>
+				<li><a href="#" class="twitter social-twitter white" alt="twitter" title="Twitter"></a></li>
+				<li><a href="#" class="buscar iconCapMex" alt="buscar" title="Buscar" data-icon="&#75;"></a></li>
+			</ul>
+		</div>
+	</section>
+	<nav role="select">
+		<ul>
+			<li><a href="#">Mexico</a></li>
+			<li><a href="#">The Nation</a></li>
+			<li>Business
+				<ul>
+					<li><a href="#">Mexico</a></li>
+					<li><a href="#">The Nation</a></li>
+					<li><a href="#">Business</a></li>
+					<li><a href="#">World</a></li>
+					<li><a href="#">Living</a></li>
+					<li><a href="#">Sports</a></li>
+				</ul>
+			</li>
+			<li><a href="#">World</a></li>
+			<li><a href="#">Living</a></li>
+			<li><a href="#">Sports</a></li>
+			<li>Más Secciones
+				<ul>
+					<li><a href="#">Mexico</a></li>
+					<li><a href="#">The Nation</a></li>
+					<li><a href="#">Business</a></li>
+					<li><a href="#">World</a></li>
+					<li><a href="#">Living</a></li>
+					<li><a href="#">Sports</a></li>
+				</ul>
+			</li>
+		</ul>
+		<select onchange="if (this.value) window.location.href = this.value;">
+			<option value="#" selected>Menu</option>
+			<option value="#">Mexico</option>
+			<option value="#">The Nation</option>
+			<option value="#">Business</option>
+			<option value="#">World</option>
+			<option value="#">Living</option>
+			<option value="#">Sports</option>
+			<option value="#">More Sections</option>
+		</select>
+	</nav>
+</header>
+<main style='max-width:1320px; margin:0 auto;'>
+	<section id="main">
+		<div class="row">
+			<div class="six columns firstNote">
+				<a href="#" class="world">
+					<figure>
+						<img src="images/dot.png" style="background-image:url(images/sampleImages/pope_francis.jpeg);" />
+						<figcaption>can pope francis clean up god’s bank? <time>5 minutes ago</time></figcaption>
+					</figure>
+				</a>
+			</div>
+			<div class="six columns secondNote">
+				<a href="#" class="business">
+					<h2>UGALDE: PRI MAY CLINCH MAJORITY ON ELECTIONS</h2>
+					<q>During a panel organized by the Woodrow Wilson Center in Washington, ex president of the former Federal Electoral Institute said the PRI will likely win the majority in the Chamber of Deputies in the upcoming elections.<time>5 minutes ago</time></q>
+				</a>
+			</div>
+			<div class="six columns thirdNotes">
+				<div class="row">
+					<div class="sic columns">
+						<a href="#" class="living">
+							<figure>
+								<img src="images/sampleImages/yuan.jpg"/>
+								<figcaption>CHINA DEVALUATES YUAN BY 2%<time>1 hour ago</time></figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="sic columns">
+						<a href="#" class="sports">
+							<figure>
+								<img src="images/sampleImages/berahino3_3424192b.jpg"/>
+								<figcaption>Tottenham left to sweat over Saido Berahino transfer<time>2 hours ago</time></figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="moreNewsTop">
+		<div class="wrapper">
+			<div class="row">
+				<div class="eight columns thenation">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/gallinas.jpg);"/>
+							<figcaption>
+								<h2>H5N1 OUTBREAK DRIVES UP PRICES</h2>Limited supplies of baby poultry and barn space to house them will hamper U.S. farmers’ efforts to rebuild ravaged egg supplies.<time>5 minutes ago</time></figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns add">
+					<a href="#" class="lateral">
+						<img src="images/sampleImages/paraisoAdd_300x250.jpg"/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="moreNewsBtm">
+		<div class="wrapper">
+			<div class="row">
+				<div class="four columns living">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" style="background:url(images/sampleImages/living.jpg);"/>
+							<figcaption>
+								<h2>CONTEMPORARY FURNITURE GETS LIGHTER, CLEANER</h2><time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns sports">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/sports.jpg);"/>
+							<figcaption>
+								<h2>NFL REVIEWING JETS’ PUNCH CASE AFTER BUSTING QB’S JAW</h2><time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns business">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/zapatos.jpg);"/>
+							<figcaption>
+								<h2>DOES BACKPAGE AIDS TRAFFICKERS?</h2><time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="add">
+		<div class="addsGalery" data-state="closed">
+			<div class="row">
+				<a href="video/2015-cadillac-ats-sedan.jpg" class="iconCapMex galery fancybox" rel="cadillac" data-icon="+" title="Foto Galery"></a>
+				<a class="fancybox fancybox.iframe iconCapMex video" href="iframe.html" data-icon="™" title="Videos"></a>	
+				<a href="#" class="iconCapMex web" data-icon="0" title="visit our website"></a>	
+				<a href="#" class="iconCapMex contact" data-icon="N" title="Contact us"></a>
+			</div>
+		</div>
+		<div class="video">
+        	<script src="http://cdnapi.kaltura.com/p/1976201/sp/197620100/embedIframeJs/uiconf_id/31316502/partner_id/1976201"></script>
+            <div id="kaltura_player_1442285433" class="player"></div>
+			<script>
+			kWidget.embed({
+				"targetId": "kaltura_player_1442285433", 
+				"wid": "_1976201", 
+				"uiconf_id": 31316502,
+				"flashvars": {
+					"streamerType": "auto",
+					"IframeCustomPluginCss1" : "css/customSkin.css",
+					"autoPlay": true
+				},
+				"cache_st": 1442285433,
+				"entry_id": "0_3la0ga9x"
+			})
+            </script>
+        </div>
+		<a id="cadillac">
+			<figure class="fullscreen">
+				<img src="images/dot.png" style="background-image:url(video/2015-cadillac-ats-sedan2.jpg);"/>
+				<figcaption></figcaption>
+			</figure>
+		</a>
+		<a class="fancybox" rel="cadillac" href="video/2015-cadillac-ats-sedan1.jpg" title="Cadillac ATS 60 mensualidades desde $6,900 pesos">
+			<img src="video/2015-cadillac-ats-sedan1.jpg" alt="2015-cadillac-ats-sedan" />
+		</a>
+		<a class="fancybox" rel="cadillac" href="video/2015-cadillac-ats-sedan2.jpg" title="Bono de $85,400.00 y 6 servicios de mantenimiento">
+			<img src="video/2015-cadillac-ats-sedan1.jpg" alt="2015-cadillac-ats-sedan" />
+		</a>
+	</section>
+	<section id="sections">
+		<article class="living">
+			<div class="row title"><h2>Living</h2></div>
+			<div class="row">
+				<div class="four columns">
+					<a class="interiorism" href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/living.jpg);"/>
+							<figcaption>
+								<h2>Interiorism</h2>
+								contemporary furniture gets lighter, cleaner
+								<time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<a class="FashionWeek" href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/fashion.jpg);"/>
+							<figcaption>
+								<h2>FashionWeek</h2>
+								AT NY MEN’S FASHION WEEK, CALIFORNIA WAS THE MUSE
+								<time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<div class="topNews">
+						<ul>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/fashion.jpg);"/>
+										<figcaption>
+											At New York Men’s Fashion Week, California Was The Muse
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/living2.jpg);"/>
+										<figcaption>
+											Italian Mafia Gives Nod To Museum In Crime Hub
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/BeijingsArt.jpg);"/>
+										<figcaption>
+											Beijing’s Art Scene Raises Its Profile Because Of Tourist’s Demands
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/La-Patria.png);"/>
+										<figcaption>
+											González Receives Rightful Recognition On Mexican Arts Field
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+		<section class="add">
+			<a href="#">
+				<figure class="fullWide">
+					<img src="images/dot.png" style="background-image:url(images/sampleImages/bonus_miles.jpg);"/>
+				</figure>
+			</a>
+		</section>
+		<article class="mexico">
+			<div class="row title"><h2>Mexico</h2></div>
+			<div class="row">
+				<div class="four columns">
+					<a class="MexicoCity" href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/mexicoCity.jpg);"/>
+							<figcaption>
+								<h2>MexicoCity</h2>
+								MEXICO CITY  DEALS WITH HEAVY FLOODS
+								<time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<a class="USBorder" href="#">
+						<figure>
+							<img src="images/dot.png" style="background-image:url(images/sampleImages/USBorder.jpg);"/>
+							<figcaption>
+								<h2>USBorder</h2>
+								MEXICO AND UNITED STATES DISCUSS MIGRANTS
+								<time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<div class="topNews">
+						<ul>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/EPN.png);"/>
+										<figcaption>
+											EPN Identifies Youth Scholars On Ceremony Held In Mexico City
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/Mexico-digital.png);"/>
+										<figcaption>
+											Mexico Unveils Digital Road Map For Better Opportunities For Youth
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/loto.jpg);"/>
+										<figcaption>
+											National Lottery Marks 245 Years Since The Announcement Of The New Leader
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<figure>
+										<img src="images/dot.png" style="background-image:url(images/sampleImages/latam.png);"/>
+										<figcaption>
+											LaTam Photojournalists Compete At Bellas Artes On Photo Contest
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="opinion">
+			<div class="row title"><h2><img src="images/opinion.svg"></h2></div>
+			<div class="row">
+				<div class="four columns">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" class="photo-john"/>
+							<figcaption>
+								<h2>Sir John Lennon</h2>
+								Diplomatic Fairy Tales
+								<time>1 hour ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" class="photo-house"/>
+							<figcaption>
+								<h2>Dr. G House</h2>
+								Politico’s rich wives
+								<time>1 day ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="four columns">
+					<a href="#">
+						<figure>
+							<img src="images/dot.png" class="photo-wynn"/>
+							<figcaption>
+								<h2>Miss Elaine Wynn</h2>
+								Lessons from Greece
+								<time>2 days ago</time>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</article>
+		<section class="add">
+			<a href="#">
+				<figure class="fullWide">
+					<img src="images/dot.png" style="background-image:url(images/sampleImages/bonus_miles.jpg);"/>
+				</figure>
+			</a>
+		</section>
+		<article class="video" style="background:#292929;">
+			<div class="row title"><h2>Video</h2></div>
+			<div class="row">
+				<div class="eight columns" style="background:rgba(255,255,255, 0.1); height:500px;">
+					<script src="http://cdnapi.kaltura.com/p/1976201/sp/197620100/embedIframeJs/uiconf_id/31316502/partner_id/1976201"></script>
+                    <div id="kaltura_player_1442541061" style="width:100%; height:498px;"></div>
+                    <script>
+                    kWidget.embed({
+                      "targetId": "kaltura_player_1442541061",
+                      "wid": "_1976201",
+                      "uiconf_id": 31316502,
+                      "flashvars": {
+                        "streamerType": "auto",
+						"IframeCustomPluginCss1" : "css/customSkin.css",
+						"autoPlay": false
+                      },
+                      "cache_st": 1442541061,
+                      "entry_id": "1_h2rmf1iy"
+                    });
+                    </script>
+				</div>
+				<div class="four columns" style="background:rgba(255,255,255, 0.1); height:240px; position:relative;">
+                	<script src="http://cdnapi.kaltura.com/p/1976201/sp/197620100/embedIframeJs/uiconf_id/31316502/partner_id/1976201"></script>
+                    <div id="kaltura_player_1442541354" style="width: 100%; height: 100% !important;"></div>
+                    <script>
+                    kWidget.embed({
+                      "targetId": "kaltura_player_1442541354",
+                      "wid": "_1976201",
+                      "uiconf_id": 31316502,
+                      "flashvars":{
+						  "IframeCustomPluginCss1" : "css/customSkin.css",
+						  "autoPlay": false
+                      },
+                      "cache_st": 1442541354,
+                      "entry_id": "1_6t5o4ei7"
+                    });
+                    </script>
+                </div>
+				<div class="four columns" style="background:rgba(255,255,255, 0.1); height:240px; margin:20px 0 0 0;"></div>
+			</div>
+			<div class="row" style="margin:14px 0 0 0;">
+				<div class="four columns" style="background:rgba(255,255,255, 0.1); height:240px;"></div>
+				<div class="four columns" style="background:rgba(255,255,255, 0.1); height:240px;"></div>
+				<div class="four columns add">
+					<a href="#" class="lateral">
+						<img src="images/sampleImages/paraisoAdd_300x250.jpg" style="height:200px;">
+					</a>
+				</div>
+			</div>
+		</article>
+	</section>
+</main>
+<footer></footer>
+<script type="text/javascript" src="js/theNews.js"></script>
+</body>
+</html>

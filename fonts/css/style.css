@@ -1,0 +1,2785 @@
+@charset "UTF-8";
+/* Compiled by Norberto Lodela on August 2015 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  background-color: rgba(204, 204, 204, 0.75); }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(65, 99, 125, 0.75);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.35); }
+
+::-webkit-scrollbar-button {
+  background-color: rgba(65, 99, 125, 0.75);
+  display: none; }
+
+::-webkit-scrollbar-corner {
+  background-color: black; }
+
+/* Mantain aspectratio */
+/* Aspect Ratios: standard 4:3 | WideScreen 16:9 */
+.sixteen-nine {
+  position: relative; }
+  .sixteen-nine:before {
+    display: block;
+    content: "";
+    width: 100%; }
+  .sixteen-nine > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+/* MERCURY DISPLAY BOLD */
+@font-face {
+  font-family: "mercury";
+  src: url("../fonts/mercury_display_bold-webfont.eot");
+  src: url("../fonts/mercury_display_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/mercury_display_bold-webfont.woff") format("woff"), url("../fonts/mercury_display_bold-webfont.ttf") format("truetype"), url("../fonts/mercury_display_bold-webfont.svg#mercury_displaybold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* VERLAG BOOK */
+@font-face {
+  font-family: "verlag";
+  src: url("../fonts/verlag-book-webfont.eot");
+  src: url("../fonts/verlag-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/verlag-book-webfont.woff") format("woff"), url("../fonts/verlag-book-webfont.ttf") format("truetype"), url("../fonts/verlag-book-webfont.svg#verlagbook") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* CHRONICLE ROMAN */
+@font-face {
+  font-family: "chronicle";
+  src: url("../fonts/ChronicleDisplay-Roman.eot");
+  src: url("../fonts/ChronicleDisplay-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/ChronicleDisplay-Roman.woff") format("woff"), url("../fonts/ChronicleDisplay-Roman.ttf") format("truetype"), url("../fonts/ChronicleDisplay-Roman.svg#ChronicleDisplay-Roman") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*icoCapMex*/
+@font-face {
+  font-family: "icoCapMex";
+  src: url("../fonts/iconosCapMex.eot");
+  src: url("../fonts/iconosCapMex.eot?#iefix") format("embedded-opentype"), url("../fonts/iconosCapMex.woff") format("woff"), url("../fonts/iconosCapMex.ttf") format("truetype"), url("../fonts/iconosCapMex.svg#iconosCapMex") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*Social_ico*/
+@font-face {
+  font-family: "social_ico";
+  src: url("../fonts/social_ico.eot");
+  src: url("../fonts/social_ico.eot?#iefix") format("embedded-opentype"), url("../fonts/social_ico.woff") format("woff"), url("../fonts/social_ico.ttf") format("truetype"), url("../fonts/social_ico.svg#Social_ico") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Variables - Fuentes */
+.img {
+  width: 100%;
+  height: 38px;
+  position: absolute; }
+
+.iconCapMex:before {
+  content: attr(data-icon);
+  font-family: icoCapMex;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: rgba(255, 255, 255, 0.6); }
+
+.white {
+  color: red; }
+
+[class^="social-"], [class*=" social-"] {
+  font-family: social_ico;
+  font-size: 22px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.social-facebook:before {
+  content: "\e600";
+  font-size: 22px;
+  line-height: 20px !important; }
+
+.social-facebook2:before {
+  content: "\e601"; }
+
+.social-facebook3:before {
+  content: "\e602"; }
+
+.social-twitter:before {
+  content: "\e603"; }
+
+.social-twitter2:before {
+  content: "\e604"; }
+
+.social-twitter3:before {
+  content: "\e605"; }
+
+.social-video:before {
+  content: "\e606"; }
+
+.social-video2:before {
+  content: "\e607"; }
+
+.add {
+  background: #f2f2f2;
+  text-align: center;
+  display: block; }
+  .add a {
+    text-decoration: none;
+    display: block;
+    border: none; }
+    .add a img {
+      position: absolute;
+      border: none; }
+    .add a.lateral img {
+      max-width: 300px;
+      width: 75.949367%;
+      left: 12.5%;
+      top: 8.5%; }
+    .add a .fullscreen {
+      width: 100%;
+      max-height: 540px;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      padding: 0; }
+      .add a .fullscreen img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background: #e6e6e6;
+        display: block;
+        border: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative; }
+        .add a .fullscreen img:before {
+          display: block;
+          content: "";
+          width: 100%; }
+        .add a .fullscreen img > .content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0; }
+      .add a .fullscreen figcaption {
+        display: none; }
+    .add a .fullWide {
+      width: 100%;
+      max-height: 182px;
+      height: 182px;
+      overflow: hidden;
+      display: block;
+      position: relative; }
+      .add a .fullWide img {
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat; }
+
+/* skeleto */
+section {
+  width: 100%;
+  padding: 0;
+  overflow: hidden; }
+  section#main .column, section#main .columns {
+    width: 49.999999%;
+    margin: 0 !important; }
+  @media (max-width: 550px) {
+    section#main .column, section#main .columns {
+      width: 100%;
+      margin: 0 !important; } }
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 98.5%;
+  max-width: 98.5% !important;
+  margin: 0 auto;
+  padding: 10px 0 0 0;
+  box-sizing: border-box; }
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 1%; }
+
+.column, .columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  margin-left: 0.7%; }
+  .column:first-child, .columns:first-child {
+    margin-left: 0; }
+  .column:last-child, .columns:last-child {
+    margin: 0;
+    margin-left: none;
+    float: right; }
+
+@media (min-width: 480px) {
+  .container {
+    width: 96%;
+    padding: 0; } }
+@media (min-width: 550px) {
+  .column, .columns {
+    margin-left: 1%; }
+    .column:first-child, .columns:first-child {
+      margin-left: 0; }
+
+  .one.column,
+  .one.columns {
+    width: 7.66666666667%; }
+
+  .two.columns {
+    width: 15.84%; }
+
+  .three.columns {
+    width: 24.25%; }
+
+  .four.columns {
+    width: 32.6666666667%; }
+
+  .five.columns {
+    width: 42.3333333333%; }
+
+  .six.columns {
+    width: 49.5%; }
+
+  .seven.columns {
+    width: 56.6666666667%; }
+
+  .eight.columns {
+    width: 66.3333333333%; }
+
+  .nine.columns {
+    width: 75%; }
+
+  .ten.columns {
+    width: 82.6666666667%; }
+
+  .eleven.columns {
+    width: 91.3333333333%; }
+
+  .twelve.columns {
+    width: 100%;
+    margin-left: 0; }
+
+  .one-third.column {
+    width: 30.6666666667%; }
+
+  .two-thirds.column {
+    width: 65.3333333333%; }
+
+  .one-half.column {
+    width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns {
+    margin-left: 8.66666666667%; }
+
+  .offset-by-two.column,
+  .offset-by-two.columns {
+    margin-left: 17.3333333333%; }
+
+  .offset-by-three.column,
+  .offset-by-three.columns {
+    margin-left: 26%; }
+
+  .offset-by-four.column,
+  .offset-by-four.columns {
+    margin-left: 34.6666666667%; }
+
+  .offset-by-five.column,
+  .offset-by-five.columns {
+    margin-left: 43.3333333333%; }
+
+  .offset-by-six.column,
+  .offset-by-six.columns {
+    margin-left: 52%; }
+
+  .offset-by-seven.column,
+  .offset-by-seven.columns {
+    margin-left: 60.6666666667%; }
+
+  .offset-by-eight.column,
+  .offset-by-eight.columns {
+    margin-left: 69.3333333333%; }
+
+  .offset-by-nine.column,
+  .offset-by-nine.columns {
+    margin-left: 78.0%; }
+
+  .offset-by-ten.column,
+  .offset-by-ten.columns {
+    margin-left: 86.6666666667%; }
+
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns {
+    margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns {
+    margin-left: 34.6666666667%; }
+
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns {
+    margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns {
+    margin-left: 52%; } }
+hr {
+  margin: 10px 0;
+  border-width: 0;
+  border-top: solid 1px #dddddd; }
+
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+* {
+  box-sizing: border-box; }
+
+html|* > svg {
+  transform-origin: 0% 0% 0px; }
+
+header {
+  width: 100%;
+  height: 110px;
+  background: none;
+  overflow: visible;
+  position: relative;
+  z-index: 10; }
+  header h1 {
+    width: 210px;
+    height: 200px;
+    position: absolute;
+    float: left;
+    background: url(../images/theNews.svg) top left no-repeat;
+    background-size: cover;
+    z-index: 1; }
+    header h1#logo {
+      cursor: pointer;
+      -webkit-transition: all 0.35s ease;
+      -moz-transition: all 0.35s ease;
+      -ms-transition: all 0.35s ease;
+      -o-transition: all 0.35s ease;
+      transition: all 0.35s ease; }
+      header h1#logo:hover {
+        -webkit-box-shadow: inset 0 0 10px 3px rgba(255, 255, 255, 0.4);
+        box-shadow: inset 0 0 10px 3px rgba(255, 255, 255, 0.4);
+        -webkit-transition: all 0.35s ease;
+        -moz-transition: all 0.35s ease;
+        -ms-transition: all 0.35s ease;
+        -o-transition: all 0.35s ease;
+        transition: all 0.35s ease; }
+  header #social {
+    height: 60px;
+    display: block;
+    background: #38576b;
+    position: relative;
+    float: right;
+    padding: 0;
+    margin: 0; }
+    header #social .CapitalMedia {
+      width: 60px;
+      height: 60px;
+      margin: 0 0 0 18px;
+      float: left;
+      position: relative; }
+      header #social .CapitalMedia img {
+        width: 100%;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../images/Ico_CapMed.svg) 0 50% no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        clear: both;
+        -webkit-transition: all 0.35s ease;
+        -moz-transition: all 0.35s ease;
+        -ms-transition: all 0.35s ease;
+        -o-transition: all 0.35s ease;
+        transition: all 0.35s ease;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+        opacity: 0.7; }
+        header #social .CapitalMedia img:hover {
+          filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+          opacity: 1; }
+    header #social .socials {
+      width: 50%;
+      height: 50px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      float: right; }
+      header #social .socials ul {
+        width: 100%;
+        overflow: hidden;
+        list-style-type: none;
+        top: 40%;
+        right: 2%;
+        display: block;
+        position: relative;
+        float: right;
+        margin: 0;
+        padding: 0;
+        text-align: right; }
+        header #social .socials ul li {
+          width: 24px;
+          height: 24px;
+          margin: 0 5px;
+          padding: 0;
+          position: relative;
+          float: right;
+          text-align: center; }
+          header #social .socials ul li a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-decoration: none; }
+            header #social .socials ul li a:before {
+              width: 100%;
+              height: 100%;
+              text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+              padding: 0;
+              margin: 0;
+              display: block;
+              position: relative;
+              float: left;
+              text-decoration: none;
+              text-align: center;
+              line-height: 22px;
+              border: none; }
+            header #social .socials ul li a:hover {
+              -webkit-transition: all 0.1s ease-in-out;
+              -moz-transition: all 0.1s ease-in-out;
+              -ms-transition: all 0.1s ease-in-out;
+              -o-transition: all 0.1s ease-in-out;
+              transition: all 0.1s ease-in-out; }
+              header #social .socials ul li a:hover:before {
+                text-shadow: 2px 2px 8px #0adcf2;
+                -webkit-transition: all 0.1s ease-in-out;
+                -moz-transition: all 0.1s ease-in-out;
+                -ms-transition: all 0.1s ease-in-out;
+                -o-transition: all 0.1s ease-in-out;
+                transition: all 0.1s ease-in-out;
+                color: white; }
+          header #social .socials ul li:first-child {
+            margin: 0 2% 0 7px !important; }
+          header #social .socials ul li:last-child {
+            margin: 0 10px 0 0; }
+  header nav[role="select"] {
+    height: 50px;
+    display: block;
+    background: #41637d;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 !important;
+    padding: 0;
+    color: #FFFFFF; }
+    header nav[role="select"] > select {
+      display: none; }
+    header nav[role="select"] ul {
+      width: 96.5%;
+      height: 50px;
+      list-style: none;
+      margin: 0 0 0 18px;
+      padding: 0;
+      position: relative;
+      float: left;
+      display: block; }
+      header nav[role="select"] ul li {
+        position: relative;
+        float: left;
+        padding: 5px 28px;
+        text-align: center;
+        font-size: 13px;
+        line-height: 43px;
+        font-family: "verlag", Verdana, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+        opacity: 0.7; }
+        header nav[role="select"] ul li.iconCapMex:before {
+          font-size: 14px;
+          float: right;
+          padding: 0 0 0 5px; }
+        header nav[role="select"] ul li:hover {
+          text-shadow: 2px 2px 8px #0adcf2;
+          color: white;
+          filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+          opacity: 1;
+          -webkit-transition: all 0.05s ease-in-out;
+          -moz-transition: all 0.05s ease-in-out;
+          -ms-transition: all 0.05s ease-in-out;
+          -o-transition: all 0.05s ease-in-out;
+          transition: all 0.05s ease-in-out; }
+          header nav[role="select"] ul li:hover > a {
+            filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+            opacity: 1; }
+        header nav[role="select"] ul li > a {
+          color: inherit;
+          text-decoration: none;
+          transition: inherit; }
+        header nav[role="select"] ul li:first-child {
+          padding: 5px 28px 5px 0;
+          text-align: right; }
+        header nav[role="select"] ul li:last-child {
+          width: 165px;
+          padding: 5px 0 0 0;
+          margin: 0;
+          text-align: right;
+          position: relative;
+          float: right;
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+          opacity: 0.7; }
+          header nav[role="select"] ul li:last-child:before {
+            content: 'Q';
+            font-family: icoCapMex;
+            font-size: 24px;
+            line-height: 24px;
+            width: 35px;
+            height: 25px;
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            float: left;
+            display: block;
+            margin: 0;
+            padding: 5px 0 0 0; }
+          header nav[role="select"] ul li:last-child:hover {
+            filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+            opacity: 1; }
+        header nav[role="select"] ul li ul {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          top: 45px;
+          right: -3px;
+          border: solid 1px rgba(0, 0, 0, 0.5);
+          display: none;
+          filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+          opacity: 1; }
+          header nav[role="select"] ul li ul li {
+            width: 100%;
+            height: 35px;
+            padding: 5px;
+            background: #41637d;
+            color: #ffffff;
+            border: solid 1px white;
+            border-width: 0 0 1px 0;
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+            opacity: 0.9; }
+            header nav[role="select"] ul li ul li > a {
+              width: 100%;
+              height: 100%;
+              display: block;
+              text-align: left;
+              font-size: 11px;
+              line-height: 23px;
+              margin: 0;
+              padding: 0 0 0 5px; }
+            header nav[role="select"] ul li ul li:hover {
+              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+              opacity: 1; }
+            header nav[role="select"] ul li ul li:first-child {
+              padding: 5px 5px;
+              text-align: left; }
+            header nav[role="select"] ul li ul li:last-child {
+              width: 100%;
+              padding: 5px 5px;
+              border: none;
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+              opacity: 0.9; }
+              header nav[role="select"] ul li ul li:last-child:before {
+                display: none; }
+  @media (max-width: 768px) {
+    header nav[role="select"] ul {
+      display: none; }
+    header nav[role="select"] select {
+      width: 40%;
+      height: 65%;
+      top: 17.5%;
+      right: 1%;
+      display: block;
+      position: relative;
+      float: right;
+      user-select: none;
+      cursor: pointer;
+      border: none;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+      opacity: 0.7;
+      font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 70px; } }
+
+main .firstNote a {
+  height: 540px;
+  display: block;
+  text-decoration: none; }
+  main .firstNote a:hover figcaption {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+    opacity: 0.85;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+  main .firstNote a.mexico figcaption {
+    color: #2FA9A3; }
+    main .firstNote a.mexico figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 163, 0.7);
+      content: "mexico";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA9A3;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.thenation figcaption {
+    color: #687B59; }
+    main .firstNote a.thenation figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(104, 123, 89, 0.7);
+      content: "The Nation";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #687B59;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.business figcaption {
+    color: #5E597B; }
+    main .firstNote a.business figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(94, 89, 123, 0.7);
+      content: "business";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #5E597B;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.world figcaption {
+    color: #B3AE92; }
+    main .firstNote a.world figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 174, 146, 0.7);
+      content: "world";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AE92;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.headlines figcaption {
+    color: #E79864; }
+    main .firstNote a.headlines figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 152, 100, 0.7);
+      content: "headlines";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E79864;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.living figcaption {
+    color: #E7BC64; }
+    main .firstNote a.living figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 188, 100, 0.7);
+      content: "living";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E7BC64;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.sports figcaption {
+    color: #2FA97E; }
+    main .firstNote a.sports figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 126, 0.7);
+      content: "sports";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA97E;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.twominutes figcaption {
+    color: #CB564F; }
+    main .firstNote a.twominutes figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(203, 86, 79, 0.7);
+      content: "Two Minutes";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #CB564F;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.opinion figcaption {
+    color: #B3AA95; }
+    main .firstNote a.opinion figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 170, 149, 0.7);
+      content: "opinion";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AA95;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a.videos figcaption {
+    color: #00B2EA; }
+    main .firstNote a.videos figcaption:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(0, 178, 234, 0.7);
+      content: "videos";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #00B2EA;
+      border-width: 1px 0 0 0;
+      z-index: 9;
+      top: 0;
+      left: 0; }
+  main .firstNote a figure {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+    main .firstNote a figure img {
+      width: 100%;
+      height: 385px;
+      position: absolute;
+      top: 0;
+      background: #e6e6e6;
+      display: block;
+      background-size: cover;
+      background-position: center center;
+      position: relative; }
+      main .firstNote a figure img:before {
+        display: block;
+        content: "";
+        width: 100%; }
+      main .firstNote a figure img > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+    main .firstNote a figure figcaption {
+      max-height: 154px;
+      height: 154px;
+      position: relative;
+      margin: 0;
+      padding: 10px 30px;
+      border: solid 1px;
+      border-width: 0 0 1px 0;
+      font-family: "verlag", Verdana, sans-serif;
+      /*font-size:38px; line-height:42px;*/
+      font-size: 237.49656249999998%;
+      letter-spacing: 2px;
+      text-transform: uppercase; }
+      main .firstNote a figure figcaption:before {
+        top: -38px !important; }
+main .secondNote {
+  height: 280px;
+  max-height: 281px; }
+  main .secondNote a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    float: left;
+    text-decoration: none;
+    margin: 0;
+    padding: 5%;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+    main .secondNote a h2 {
+      width: 100%;
+      font-family: verlag;
+      font-size: 38px;
+      line-height: 42px;
+      letter-spacing: 2px;
+      margin: 10px 0 0 0;
+      padding: 20px 0 0 0; }
+    main .secondNote a q {
+      width: 100%;
+      min-height: 100px;
+      margin: 0 auto;
+      padding: 15px 0 0 0;
+      display: block;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 1px;
+      position: relative; }
+      main .secondNote a q time {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+    main .secondNote a.mexico {
+      background: rgba(47, 169, 163, 0.7);
+      color: white; }
+      main .secondNote a.mexico:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 163, 0.7);
+        content: "mexico";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA9A3;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.thenation {
+      background: rgba(104, 123, 89, 0.7);
+      color: white; }
+      main .secondNote a.thenation:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(104, 123, 89, 0.7);
+        content: "The Nation";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #687B59;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.business {
+      background: rgba(94, 89, 123, 0.7);
+      color: white; }
+      main .secondNote a.business:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(94, 89, 123, 0.7);
+        content: "business";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #5E597B;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.world {
+      background: rgba(179, 174, 146, 0.7);
+      color: white; }
+      main .secondNote a.world:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 174, 146, 0.7);
+        content: "world";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AE92;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.headlines {
+      background: rgba(231, 152, 100, 0.7);
+      color: white; }
+      main .secondNote a.headlines:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 152, 100, 0.7);
+        content: "headlines";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E79864;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.living {
+      background: rgba(231, 188, 100, 0.7);
+      color: white; }
+      main .secondNote a.living:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 188, 100, 0.7);
+        content: "living";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E7BC64;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.sports {
+      background: rgba(47, 169, 126, 0.7);
+      color: white; }
+      main .secondNote a.sports:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 126, 0.7);
+        content: "sports";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA97E;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.twominutes {
+      background: rgba(203, 86, 79, 0.7);
+      color: white; }
+      main .secondNote a.twominutes:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(203, 86, 79, 0.7);
+        content: "Two Minutes";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #CB564F;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.opinion {
+      background: rgba(179, 170, 149, 0.7);
+      color: white; }
+      main .secondNote a.opinion:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 170, 149, 0.7);
+        content: "opinion";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AA95;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a.videos {
+      background: rgba(0, 178, 234, 0.7);
+      color: white; }
+      main .secondNote a.videos:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(0, 178, 234, 0.7);
+        content: "videos";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #00B2EA;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 0;
+        left: 0; }
+    main .secondNote a:hover {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+      opacity: 0.85;
+      -webkit-transition: all 0.35s ease-in-out;
+      -moz-transition: all 0.35s ease-in-out;
+      -ms-transition: all 0.35s ease-in-out;
+      -o-transition: all 0.35s ease-in-out;
+      transition: all 0.35s ease-in-out; }
+main .thirdNotes .row a {
+  height: 259px;
+  max-height: 260px;
+  display: block;
+  margin: 0;
+  float: none;
+  text-align: left;
+  border: solid 1px;
+  border-width: 0 0 1px 0 !important;
+  position: relative; }
+  main .thirdNotes .row a figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+    main .thirdNotes .row a figure img {
+      line-height: 0;
+      vertical-align: bottom !important;
+      display: block;
+      position: absolute;
+      max-height: 100%;
+      left: -25%; }
+    main .thirdNotes .row a figure figcaption {
+      width: 100%;
+      height: 40%;
+      position: absolute;
+      top: 60%;
+      font-family: verlag;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: normal !important;
+      padding: 3% 5%;
+      color: white; }
+      main .thirdNotes .row a figure figcaption time {
+        position: absolute;
+        bottom: 5px;
+        left: 5%;
+        color: white; }
+    main .thirdNotes .row a figure:hover {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+      opacity: 0.85;
+      -webkit-transition: all 0.35s ease-in-out;
+      -moz-transition: all 0.35s ease-in-out;
+      -ms-transition: all 0.35s ease-in-out;
+      -o-transition: all 0.35s ease-in-out;
+      transition: all 0.35s ease-in-out; }
+  main .thirdNotes .row a.mexico {
+    border-color: #2FA9A3;
+    overflow: hidden;
+    background: rgba(47, 169, 163, 0.7); }
+    main .thirdNotes .row a.mexico figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 163, 0.7);
+      content: "mexico";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA9A3;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.mexico figure figcaption {
+      background: rgba(47, 169, 163, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(47, 169, 163, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(47, 169, 163, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(47, 169, 163, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(47, 169, 163, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #2FA9A3; }
+  main .thirdNotes .row a.thenation {
+    border-color: #687B59;
+    overflow: hidden;
+    background: rgba(104, 123, 89, 0.7); }
+    main .thirdNotes .row a.thenation figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(104, 123, 89, 0.7);
+      content: "The Nation";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #687B59;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.thenation figure figcaption {
+      background: rgba(104, 123, 89, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(104, 123, 89, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(104, 123, 89, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(104, 123, 89, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(104, 123, 89, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #687B59; }
+  main .thirdNotes .row a.business {
+    border-color: #5E597B;
+    overflow: hidden;
+    background: rgba(94, 89, 123, 0.7); }
+    main .thirdNotes .row a.business figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(94, 89, 123, 0.7);
+      content: "business";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #5E597B;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.business figure figcaption {
+      background: rgba(94, 89, 123, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(94, 89, 123, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(94, 89, 123, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(94, 89, 123, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(94, 89, 123, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #5E597B; }
+  main .thirdNotes .row a.world {
+    border-color: #B3AE92;
+    overflow: hidden;
+    background: rgba(179, 174, 146, 0.7); }
+    main .thirdNotes .row a.world figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 174, 146, 0.7);
+      content: "world";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AE92;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.world figure figcaption {
+      background: rgba(179, 174, 146, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(179, 174, 146, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(179, 174, 146, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(179, 174, 146, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(179, 174, 146, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #B3AE92; }
+  main .thirdNotes .row a.headlines {
+    border-color: #E79864;
+    overflow: hidden;
+    background: rgba(231, 152, 100, 0.7); }
+    main .thirdNotes .row a.headlines figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 152, 100, 0.7);
+      content: "headlines";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E79864;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.headlines figure figcaption {
+      background: rgba(231, 152, 100, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(231, 152, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(231, 152, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(231, 152, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(231, 152, 100, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #E79864; }
+  main .thirdNotes .row a.living {
+    border-color: #E7BC64;
+    overflow: hidden;
+    background: rgba(231, 188, 100, 0.7); }
+    main .thirdNotes .row a.living figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 188, 100, 0.7);
+      content: "living";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E7BC64;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.living figure figcaption {
+      background: rgba(231, 188, 100, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(231, 188, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(231, 188, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(231, 188, 100, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(231, 188, 100, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #E7BC64; }
+  main .thirdNotes .row a.sports {
+    border-color: #2FA97E;
+    overflow: hidden;
+    background: rgba(47, 169, 126, 0.7); }
+    main .thirdNotes .row a.sports figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 126, 0.7);
+      content: "sports";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA97E;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.sports figure figcaption {
+      background: rgba(47, 169, 126, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(47, 169, 126, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(47, 169, 126, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(47, 169, 126, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(47, 169, 126, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #2FA97E; }
+  main .thirdNotes .row a.twominutes {
+    border-color: #CB564F;
+    overflow: hidden;
+    background: rgba(203, 86, 79, 0.7); }
+    main .thirdNotes .row a.twominutes figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(203, 86, 79, 0.7);
+      content: "Two Minutes";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #CB564F;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.twominutes figure figcaption {
+      background: rgba(203, 86, 79, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(203, 86, 79, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(203, 86, 79, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(203, 86, 79, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(203, 86, 79, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #CB564F; }
+  main .thirdNotes .row a.opinion {
+    border-color: #B3AA95;
+    overflow: hidden;
+    background: rgba(179, 170, 149, 0.7); }
+    main .thirdNotes .row a.opinion figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 170, 149, 0.7);
+      content: "opinion";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AA95;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.opinion figure figcaption {
+      background: rgba(179, 170, 149, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(179, 170, 149, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(179, 170, 149, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(179, 170, 149, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(179, 170, 149, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #B3AA95; }
+  main .thirdNotes .row a.videos {
+    border-color: #00B2EA;
+    overflow: hidden;
+    background: rgba(0, 178, 234, 0.7); }
+    main .thirdNotes .row a.videos figure:before {
+      background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(0, 178, 234, 0.7);
+      content: "videos";
+      font-family: verlag;
+      font-size: 18px;
+      line-height: 38px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 38px;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 45px;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #00B2EA;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main .thirdNotes .row a.videos figure figcaption {
+      background: rgba(0, 178, 234, 0.5);
+      background: -webkit-linear-gradient(-90deg, rgba(0, 178, 234, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -moz-linear-gradient(180deg, rgba(0, 178, 234, 0.5), rgba(105, 105, 105, 0.7));
+      background-image: -webkit-linear-gradient(180deg, rgba(0, 178, 234, 0.5), rgba(105, 105, 105, 0.7));
+      background: linear-gradient(180deg, rgba(0, 178, 234, 0.5), rgba(105, 105, 105, 0.7));
+      text-shadow: 2px 2px 6px #00B2EA; }
+main #moreNewsTop {
+  margin: 0; }
+  main #moreNewsTop div {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden; }
+    main #moreNewsTop div:before {
+      top: 260px !important; }
+    main #moreNewsTop div.row {
+      border: none; }
+      main #moreNewsTop div.row a {
+        display: block;
+        width: 100%;
+        height: 300px;
+        color: white;
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -ms-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out; }
+        main #moreNewsTop div.row a figure {
+          width: 100%;
+          height: 300px;
+          font-family: verlag;
+          padding: 38px 0 0 0; }
+          main #moreNewsTop div.row a figure img {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #e6e6e6;
+            background-size: cover;
+            background-position: center center; }
+          main #moreNewsTop div.row a figure figcaption {
+            width: 50%;
+            position: relative;
+            float: left;
+            height: 261px;
+            font-size: 16px;
+            line-height: 18px;
+            padding: 15px 0 0 50px;
+            padding: 30px 20px 0 30px;
+            margin: 0 auto; }
+            main #moreNewsTop div.row a figure figcaption h2 {
+              font-size: 36px;
+              line-height: 38px;
+              margin: 0 0 20px 0; }
+            main #moreNewsTop div.row a figure figcaption time {
+              position: absolute;
+              bottom: 20px;
+              left: 30px;
+              color: white; }
+        main #moreNewsTop div.row a:hover {
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+          opacity: 0.85;
+          -webkit-transition: all 0.35s ease-in-out;
+          -moz-transition: all 0.35s ease-in-out;
+          -ms-transition: all 0.35s ease-in-out;
+          -o-transition: all 0.35s ease-in-out;
+          transition: all 0.35s ease-in-out; }
+      main #moreNewsTop div.row:last-child {
+        margin: 1% 0 0 0; }
+    main #moreNewsTop div.wrapper {
+      padding: 20px 2.5% !important; }
+    main #moreNewsTop div.mexico {
+      color: #ffffff;
+      background: rgba(47, 169, 163, 0.7); }
+      main #moreNewsTop div.mexico:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 163, 0.7);
+        content: "mexico";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA9A3;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.thenation {
+      color: #ffffff;
+      background: rgba(104, 123, 89, 0.7); }
+      main #moreNewsTop div.thenation:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(104, 123, 89, 0.7);
+        content: "The Nation";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #687B59;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.business {
+      color: #ffffff;
+      background: rgba(94, 89, 123, 0.7); }
+      main #moreNewsTop div.business:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(94, 89, 123, 0.7);
+        content: "business";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #5E597B;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.world {
+      color: #ffffff;
+      background: rgba(179, 174, 146, 0.7); }
+      main #moreNewsTop div.world:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 174, 146, 0.7);
+        content: "world";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AE92;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.headlines {
+      color: #ffffff;
+      background: rgba(231, 152, 100, 0.7); }
+      main #moreNewsTop div.headlines:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 152, 100, 0.7);
+        content: "headlines";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E79864;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.living {
+      color: #ffffff;
+      background: rgba(231, 188, 100, 0.7); }
+      main #moreNewsTop div.living:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 188, 100, 0.7);
+        content: "living";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E7BC64;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.sports {
+      color: #ffffff;
+      background: rgba(47, 169, 126, 0.7); }
+      main #moreNewsTop div.sports:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 126, 0.7);
+        content: "sports";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA97E;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.twominutes {
+      color: #ffffff;
+      background: rgba(203, 86, 79, 0.7); }
+      main #moreNewsTop div.twominutes:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(203, 86, 79, 0.7);
+        content: "Two Minutes";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #CB564F;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.opinion {
+      color: #ffffff;
+      background: rgba(179, 170, 149, 0.7); }
+      main #moreNewsTop div.opinion:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 170, 149, 0.7);
+        content: "opinion";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AA95;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.videos {
+      color: #ffffff;
+      background: rgba(0, 178, 234, 0.7); }
+      main #moreNewsTop div.videos:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(0, 178, 234, 0.7);
+        content: "videos";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #00B2EA;
+        border-width: 1px 0 0 0;
+        z-index: 9; }
+    main #moreNewsTop div.eight:before {
+      top: 0 !important; }
+main #moreNewsBtm {
+  margin: 0; }
+  main #moreNewsBtm div {
+    min-height: 350px;
+    position: relative;
+    overflow: hidden; }
+    main #moreNewsBtm div.row {
+      margin: 0 0 1.3% 0 !important; }
+      main #moreNewsBtm div.row a {
+        display: block;
+        width: 100%;
+        height: 300px;
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -ms-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out; }
+        main #moreNewsBtm div.row a figure {
+          width: 100%;
+          height: 350px;
+          max-height: 350px;
+          font-family: verlag;
+          padding: 0;
+          display: block;
+          position: relative; }
+          main #moreNewsBtm div.row a figure img {
+            max-height: 240px;
+            height: 240px;
+            position: absolute;
+            top: 0;
+            background: #e6e6e6;
+            display: block;
+            background-size: cover;
+            background-position: center center;
+            position: relative; }
+            main #moreNewsBtm div.row a figure img:before {
+              display: block;
+              content: "";
+              width: 100%; }
+            main #moreNewsBtm div.row a figure img > .content {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0; }
+          main #moreNewsBtm div.row a figure figcaption {
+            width: 100%;
+            height: 110px;
+            font-size: 22px;
+            line-height: 30px;
+            padding: 10px 0 0 5px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            text-transform: uppercase; }
+            main #moreNewsBtm div.row a figure figcaption time {
+              position: absolute;
+              bottom: 0;
+              left: 7px; }
+        main #moreNewsBtm div.row a:hover {
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+          opacity: 0.85;
+          -webkit-transition: all 0.35s ease-in-out;
+          -moz-transition: all 0.35s ease-in-out;
+          -ms-transition: all 0.35s ease-in-out;
+          -o-transition: all 0.35s ease-in-out;
+          transition: all 0.35s ease-in-out; }
+      main #moreNewsBtm div.row:last-child {
+        margin: 1% 0 0 0; }
+    main #moreNewsBtm div.wrapper {
+      padding: 0px 2.5% !important; }
+    main #moreNewsBtm div.mexico {
+      color: #ffffff; }
+      main #moreNewsBtm div.mexico a figure figcaption {
+        color: #2FA9A3; }
+      main #moreNewsBtm div.mexico a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 163, 0.7);
+        content: "mexico";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA9A3;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.mexico a:hover time {
+        color: #2FA9A3; }
+    main #moreNewsBtm div.thenation {
+      color: #ffffff; }
+      main #moreNewsBtm div.thenation a figure figcaption {
+        color: #687B59; }
+      main #moreNewsBtm div.thenation a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(104, 123, 89, 0.7);
+        content: "The Nation";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #687B59;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.thenation a:hover time {
+        color: #687B59; }
+    main #moreNewsBtm div.business {
+      color: #ffffff; }
+      main #moreNewsBtm div.business a figure figcaption {
+        color: #5E597B; }
+      main #moreNewsBtm div.business a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(94, 89, 123, 0.7);
+        content: "business";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #5E597B;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.business a:hover time {
+        color: #5E597B; }
+    main #moreNewsBtm div.world {
+      color: #ffffff; }
+      main #moreNewsBtm div.world a figure figcaption {
+        color: #B3AE92; }
+      main #moreNewsBtm div.world a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 174, 146, 0.7);
+        content: "world";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AE92;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.world a:hover time {
+        color: #B3AE92; }
+    main #moreNewsBtm div.headlines {
+      color: #ffffff; }
+      main #moreNewsBtm div.headlines a figure figcaption {
+        color: #E79864; }
+      main #moreNewsBtm div.headlines a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 152, 100, 0.7);
+        content: "headlines";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E79864;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.headlines a:hover time {
+        color: #E79864; }
+    main #moreNewsBtm div.living {
+      color: #ffffff; }
+      main #moreNewsBtm div.living a figure figcaption {
+        color: #E7BC64; }
+      main #moreNewsBtm div.living a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(231, 188, 100, 0.7);
+        content: "living";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #E7BC64;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.living a:hover time {
+        color: #E7BC64; }
+    main #moreNewsBtm div.sports {
+      color: #ffffff; }
+      main #moreNewsBtm div.sports a figure figcaption {
+        color: #2FA97E; }
+      main #moreNewsBtm div.sports a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(47, 169, 126, 0.7);
+        content: "sports";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #2FA97E;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.sports a:hover time {
+        color: #2FA97E; }
+    main #moreNewsBtm div.twominutes {
+      color: #ffffff; }
+      main #moreNewsBtm div.twominutes a figure figcaption {
+        color: #CB564F; }
+      main #moreNewsBtm div.twominutes a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(203, 86, 79, 0.7);
+        content: "Two Minutes";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #CB564F;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.twominutes a:hover time {
+        color: #CB564F; }
+    main #moreNewsBtm div.opinion {
+      color: #ffffff; }
+      main #moreNewsBtm div.opinion a figure figcaption {
+        color: #B3AA95; }
+      main #moreNewsBtm div.opinion a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(179, 170, 149, 0.7);
+        content: "opinion";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #B3AA95;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.opinion a:hover time {
+        color: #B3AA95; }
+    main #moreNewsBtm div.videos {
+      color: #ffffff; }
+      main #moreNewsBtm div.videos a figure figcaption {
+        color: #00B2EA; }
+      main #moreNewsBtm div.videos a figure:before {
+        background: url(../images/cuadritoDark.svg) 15px 10px no-repeat, rgba(0, 178, 234, 0.7);
+        content: "videos";
+        font-family: verlag;
+        font-size: 18px;
+        line-height: 38px;
+        color: white;
+        text-transform: capitalize;
+        width: 100%;
+        height: 38px;
+        display: block;
+        margin: 0;
+        padding: 0 0 0 45px;
+        position: absolute;
+        /*colours*/
+        border: solid 1px #00B2EA;
+        border-width: 1px 0 0 0;
+        z-index: 9;
+        top: 201px;
+        left: 0; }
+      main #moreNewsBtm div.videos a:hover time {
+        color: #00B2EA; }
+main #sections article {
+  width: 100%;
+  min-height: 300px;
+  margin: 0;
+  padding: 20px 2.5% 20px 2.5%;
+  position: relative; }
+  main #sections article:before {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 82px;
+    background: url(../images/cuadritoDark.svg) 0 42px repeat-x;
+    background-size: 1px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 20px; }
+  main #sections article .title {
+    height: 80px;
+    min-height: 90px;
+    text-align: center; }
+    main #sections article .title h2 {
+      text-align: center;
+      font-family: Arial, "Helvetica", sans-serif;
+      font-size: 72px;
+      line-height: 82px;
+      position: relative;
+      float: left;
+      margin: 0;
+      padding: 0 13px;
+      background: white; }
+  main #sections article.mexico .title h2 {
+    color: #2FA9A3; }
+  main #sections article.mexico div a figure img {
+    border: solid 1px #2FA9A3;
+    border-width: 0 0 1px 0; }
+  main #sections article.mexico div a figure figcaption {
+    color: #2FA9A3; }
+    main #sections article.mexico div a figure figcaption h2 {
+      background: rgba(47, 169, 163, 0.8); }
+      main #sections article.mexico div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.mexico div.topNews {
+    background: rgba(47, 169, 163, 0.4); }
+    main #sections article.mexico div.topNews:before {
+      background: rgba(47, 169, 163, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA9A3;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.mexico div.topNews ul li {
+      border: solid 1px #2FA9A3;
+      border-width: 0 0 1px 0; }
+      main #sections article.mexico div.topNews ul li a {
+        background: #2fa9a3; }
+  main #sections article.thenation .title h2 {
+    color: #687B59; }
+  main #sections article.thenation div a figure img {
+    border: solid 1px #687B59;
+    border-width: 0 0 1px 0; }
+  main #sections article.thenation div a figure figcaption {
+    color: #687B59; }
+    main #sections article.thenation div a figure figcaption h2 {
+      background: rgba(104, 123, 89, 0.8); }
+      main #sections article.thenation div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.thenation div.topNews {
+    background: rgba(104, 123, 89, 0.4); }
+    main #sections article.thenation div.topNews:before {
+      background: rgba(104, 123, 89, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #687B59;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.thenation div.topNews ul li {
+      border: solid 1px #687B59;
+      border-width: 0 0 1px 0; }
+      main #sections article.thenation div.topNews ul li a {
+        background: #687b59; }
+  main #sections article.business .title h2 {
+    color: #5E597B; }
+  main #sections article.business div a figure img {
+    border: solid 1px #5E597B;
+    border-width: 0 0 1px 0; }
+  main #sections article.business div a figure figcaption {
+    color: #5E597B; }
+    main #sections article.business div a figure figcaption h2 {
+      background: rgba(94, 89, 123, 0.8); }
+      main #sections article.business div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.business div.topNews {
+    background: rgba(94, 89, 123, 0.4); }
+    main #sections article.business div.topNews:before {
+      background: rgba(94, 89, 123, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #5E597B;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.business div.topNews ul li {
+      border: solid 1px #5E597B;
+      border-width: 0 0 1px 0; }
+      main #sections article.business div.topNews ul li a {
+        background: #5e597b; }
+  main #sections article.world .title h2 {
+    color: #B3AE92; }
+  main #sections article.world div a figure img {
+    border: solid 1px #B3AE92;
+    border-width: 0 0 1px 0; }
+  main #sections article.world div a figure figcaption {
+    color: #B3AE92; }
+    main #sections article.world div a figure figcaption h2 {
+      background: rgba(179, 174, 146, 0.8); }
+      main #sections article.world div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.world div.topNews {
+    background: rgba(179, 174, 146, 0.4); }
+    main #sections article.world div.topNews:before {
+      background: rgba(179, 174, 146, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AE92;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.world div.topNews ul li {
+      border: solid 1px #B3AE92;
+      border-width: 0 0 1px 0; }
+      main #sections article.world div.topNews ul li a {
+        background: #b3ae92; }
+  main #sections article.headlines .title h2 {
+    color: #E79864; }
+  main #sections article.headlines div a figure img {
+    border: solid 1px #E79864;
+    border-width: 0 0 1px 0; }
+  main #sections article.headlines div a figure figcaption {
+    color: #E79864; }
+    main #sections article.headlines div a figure figcaption h2 {
+      background: rgba(231, 152, 100, 0.8); }
+      main #sections article.headlines div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.headlines div.topNews {
+    background: rgba(231, 152, 100, 0.4); }
+    main #sections article.headlines div.topNews:before {
+      background: rgba(231, 152, 100, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E79864;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.headlines div.topNews ul li {
+      border: solid 1px #E79864;
+      border-width: 0 0 1px 0; }
+      main #sections article.headlines div.topNews ul li a {
+        background: #e79864; }
+  main #sections article.living .title h2 {
+    color: #E7BC64; }
+  main #sections article.living div a figure img {
+    border: solid 1px #E7BC64;
+    border-width: 0 0 1px 0; }
+  main #sections article.living div a figure figcaption {
+    color: #E7BC64; }
+    main #sections article.living div a figure figcaption h2 {
+      background: rgba(231, 188, 100, 0.8); }
+      main #sections article.living div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.living div.topNews {
+    background: rgba(231, 188, 100, 0.4); }
+    main #sections article.living div.topNews:before {
+      background: rgba(231, 188, 100, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #E7BC64;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.living div.topNews ul li {
+      border: solid 1px #E7BC64;
+      border-width: 0 0 1px 0; }
+      main #sections article.living div.topNews ul li a {
+        background: #e7bc64; }
+  main #sections article.sports .title h2 {
+    color: #2FA97E; }
+  main #sections article.sports div a figure img {
+    border: solid 1px #2FA97E;
+    border-width: 0 0 1px 0; }
+  main #sections article.sports div a figure figcaption {
+    color: #2FA97E; }
+    main #sections article.sports div a figure figcaption h2 {
+      background: rgba(47, 169, 126, 0.8); }
+      main #sections article.sports div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.sports div.topNews {
+    background: rgba(47, 169, 126, 0.4); }
+    main #sections article.sports div.topNews:before {
+      background: rgba(47, 169, 126, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #2FA97E;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.sports div.topNews ul li {
+      border: solid 1px #2FA97E;
+      border-width: 0 0 1px 0; }
+      main #sections article.sports div.topNews ul li a {
+        background: #2fa97e; }
+  main #sections article.twominutes .title h2 {
+    color: #CB564F; }
+  main #sections article.twominutes div a figure img {
+    border: solid 1px #CB564F;
+    border-width: 0 0 1px 0; }
+  main #sections article.twominutes div a figure figcaption {
+    color: #CB564F; }
+    main #sections article.twominutes div a figure figcaption h2 {
+      background: rgba(203, 86, 79, 0.8); }
+      main #sections article.twominutes div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.twominutes div.topNews {
+    background: rgba(203, 86, 79, 0.4); }
+    main #sections article.twominutes div.topNews:before {
+      background: rgba(203, 86, 79, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #CB564F;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.twominutes div.topNews ul li {
+      border: solid 1px #CB564F;
+      border-width: 0 0 1px 0; }
+      main #sections article.twominutes div.topNews ul li a {
+        background: #cb564f; }
+  main #sections article.opinion .title h2 {
+    color: #B3AA95; }
+  main #sections article.opinion div a figure img {
+    border: solid 1px #B3AA95;
+    border-width: 0 0 1px 0; }
+  main #sections article.opinion div a figure figcaption {
+    color: #B3AA95; }
+    main #sections article.opinion div a figure figcaption h2 {
+      background: rgba(179, 170, 149, 0.8); }
+      main #sections article.opinion div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.opinion div.topNews {
+    background: rgba(179, 170, 149, 0.4); }
+    main #sections article.opinion div.topNews:before {
+      background: rgba(179, 170, 149, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #B3AA95;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.opinion div.topNews ul li {
+      border: solid 1px #B3AA95;
+      border-width: 0 0 1px 0; }
+      main #sections article.opinion div.topNews ul li a {
+        background: #b3aa95; }
+  main #sections article.videos .title h2 {
+    color: #00B2EA; }
+  main #sections article.videos div a figure img {
+    border: solid 1px #00B2EA;
+    border-width: 0 0 1px 0; }
+  main #sections article.videos div a figure figcaption {
+    color: #00B2EA; }
+    main #sections article.videos div a figure figcaption h2 {
+      background: rgba(0, 178, 234, 0.8); }
+      main #sections article.videos div a figure figcaption h2:before {
+        color: rgba(97, 56, 11, 0.6); }
+  main #sections article.videos div.topNews {
+    background: rgba(0, 178, 234, 0.4); }
+    main #sections article.videos div.topNews:before {
+      background: rgba(0, 178, 234, 0.7);
+      content: 'Top News';
+      font-family: verlag;
+      text-align: center;
+      font-size: 18px;
+      line-height: 37px;
+      color: white;
+      text-transform: capitalize;
+      width: 100%;
+      height: 37px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      /*colours*/
+      border: solid 1px #00B2EA;
+      border-width: 1px 0 0 0;
+      z-index: 9; }
+    main #sections article.videos div.topNews ul li {
+      border: solid 1px #00B2EA;
+      border-width: 0 0 1px 0; }
+      main #sections article.videos div.topNews ul li a {
+        background: #00b2ea; }
+  main #sections article.opinion:before {
+    background-position: 0 70px; }
+  main #sections article.opinion .title {
+    margin: 0;
+    padding: 0; }
+    main #sections article.opinion .title h2 {
+      height: 114px; }
+  main #sections article.opinion div a {
+    width: 100%;
+    max-height: 435px;
+    height: 435px;
+    background: rgba(179, 170, 149, 0.5); }
+  main #sections article div {
+    min-height: 350px; }
+    main #sections article div a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-decoration: none;
+      -webkit-transition: all 0.35s ease-in-out;
+      -moz-transition: all 0.35s ease-in-out;
+      -ms-transition: all 0.35s ease-in-out;
+      -o-transition: all 0.35s ease-in-out;
+      transition: all 0.35s ease-in-out; }
+      main #sections article div a figure {
+        width: 100%;
+        height: 350px; }
+        main #sections article div a figure img {
+          width: 100%;
+          height: 240px;
+          position: absolute;
+          top: 0;
+          background: #e6e6e6;
+          display: block;
+          background-size: cover;
+          background-position: center center;
+          position: relative; }
+          main #sections article div a figure img:before {
+            display: block;
+            content: "";
+            width: 100%; }
+          main #sections article div a figure img > .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; }
+        main #sections article div a figure figcaption {
+          background: none;
+          font-family: verlag;
+          font-size: 24px;
+          line-height: 30px;
+          position: relative;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 10px 0 0 10px;
+          height: 110px; }
+          main #sections article div a figure figcaption h2 {
+            background-image: none;
+            height: 25px;
+            font-family: verlag;
+            font-size: 16px;
+            line-height: 20px !important;
+            text-align: left;
+            color: white !important;
+            margin: 0;
+            padding: 0 10px 0 0 !important;
+            position: absolute;
+            top: -35px;
+            left: 10px;
+            text-transform: none !important; }
+            main #sections article div a figure figcaption h2:before {
+              content: '#' !important;
+              font-size: 20px;
+              line-height: 20px;
+              margin: 0 !important;
+              padding: 0 5px !important; }
+          main #sections article div a figure figcaption time {
+            position: absolute;
+            bottom: 5px;
+            left: 7px;
+            line-height: normal; }
+      main #sections article div a:hover {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+        opacity: 0.85;
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -ms-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out; }
+    main #sections article div.topNews {
+      position: relative;
+      margin: 0;
+      padding: 0 !important; }
+      main #sections article div.topNews ul {
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 38px; }
+        main #sections article div.topNews ul li {
+          width: 100%;
+          max-height: 78px;
+          height: 78px;
+          display: block; }
+          main #sections article div.topNews ul li a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: relative;
+            z-index: 10; }
+            main #sections article div.topNews ul li a figure {
+              width: 100%;
+              height: 77px;
+              position: absolute;
+              top: 0; }
+              main #sections article div.topNews ul li a figure img {
+                width: 100%;
+                max-height: 78px;
+                background-position: center center;
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+                opacity: 0.15;
+                -webkit-transition: all 0.35s ease-in-out;
+                -moz-transition: all 0.35s ease-in-out;
+                -ms-transition: all 0.35s ease-in-out;
+                -o-transition: all 0.35s ease-in-out;
+                transition: all 0.35s ease-in-out; }
+              main #sections article div.topNews ul li a figure figcaption {
+                color: white;
+                position: absolute;
+                top: 0;
+                font-size: 18px;
+                line-height: 26px;
+                margin: 0;
+                padding: 12px 10px 0 0;
+                text-transform: none; }
+                main #sections article div.topNews ul li a figure figcaption:before {
+                  content: url(../images/topNews_left.svg);
+                  width: 25px;
+                  height: 78px;
+                  overflow: hidden;
+                  position: relative;
+                  float: left;
+                  display: block;
+                  margin: -12px 5px 0 0;
+                  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+                  opacity: 0.5;
+                  -webkit-transition: all 0.35s ease-in-out;
+                  -moz-transition: all 0.35s ease-in-out;
+                  -ms-transition: all 0.35s ease-in-out;
+                  -o-transition: all 0.35s ease-in-out;
+                  transition: all 0.35s ease-in-out; }
+            main #sections article div.topNews ul li a:hover {
+              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+              opacity: 1;
+              -webkit-transition: all 0.35s ease-in-out;
+              -moz-transition: all 0.35s ease-in-out;
+              -ms-transition: all 0.35s ease-in-out;
+              -o-transition: all 0.35s ease-in-out;
+              transition: all 0.35s ease-in-out; }
+              main #sections article div.topNews ul li a:hover figure img {
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+                opacity: 0;
+                -webkit-transition: all 0.35s ease-in-out;
+                -moz-transition: all 0.35s ease-in-out;
+                -ms-transition: all 0.35s ease-in-out;
+                -o-transition: all 0.35s ease-in-out;
+                transition: all 0.35s ease-in-out; }
+              main #sections article div.topNews ul li a:hover figure figcaption:before {
+                filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+                opacity: 1;
+                -webkit-transition: all 0.35s ease-in-out;
+                -moz-transition: all 0.35s ease-in-out;
+                -ms-transition: all 0.35s ease-in-out;
+                -o-transition: all 0.35s ease-in-out;
+                transition: all 0.35s ease-in-out; }
+main time {
+  width: 100%;
+  font-family: verlag;
+  font-size: 14px;
+  line-height: none !important;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 5px 0 0 2px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  color: #9B9B9B; }
